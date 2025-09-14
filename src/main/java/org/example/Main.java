@@ -13,6 +13,8 @@ public class Main {
         s.setS_Name("Ram");
         s.setS_Age(18);
 
+        Student s1 = new Student();
+
 //        Configuration cfg = new Configuration();
 //        cfg.addAnnotatedClass(org.example.Student.class);
 //        cfg.configure();
@@ -26,14 +28,17 @@ public class Main {
 
         Session session = sf.openSession();
 
-        Transaction transaction = session.beginTransaction();
+        //Transaction transaction = session.beginTransaction(); we need transaction when we are performing insert, update or delete not when fetching the data
 
-        session.persist(s); // instead of this earlier session.save(object); was used but to match the JPA standard naming convention it was changed to persist
+        s1 = session.find(Student.class,1);
 
-        transaction.commit();
+        //session.persist(s); // instead of this earlier session.save(object); was used but to match the JPA standard naming convention it was changed to persist
+
+        //transaction.commit();
         session.close();
         sf.close();
 
-        System.out.println(s);
+        System.out.println(s1); // if you want to perform something like s1.getName or s1.getAge then it's good idea to use try catch because it can throw null pointer exception
+
     }
 }

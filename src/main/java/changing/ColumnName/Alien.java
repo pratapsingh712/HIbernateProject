@@ -3,18 +3,17 @@ package changing.ColumnName;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "alien_table")
 public class Alien {
 
     @Id
-    @Column(name = "alien_Id")
     private int aid;
-    @Column(name = "alien_Name")
     private String aname;
-
-
-    @Transient // when you do not want to perform database rather some business logic on the field you can mark it as transient
     private String tech;
+    private Laptop laptop;
+
+
+//    @Transient // when you do not want to perform database rather some business logic on the field you can mark it as transient
+//    private String tech;
 
     public int getAid() {
         return aid;
@@ -38,5 +37,23 @@ public class Alien {
 
     public void setTech(String tech) {
         this.tech = tech;
+    }
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
+    @Override
+    public String toString() {
+        return "Alien{" +
+                "aid=" + aid +
+                ", aname='" + aname + '\'' +
+                ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
+                '}';
     }
 }

@@ -4,8 +4,10 @@ import changing.ColumnName.Laptop;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +25,14 @@ public class Main {
         SessionFactory sf = cfg.buildSessionFactory();
         Session session = sf.openSession();
 
-        Laptop l1 = session.find(Laptop.class,3);
-        System.out.println(l1);
+        // select * from laptop where ram = 32; -> SQL
+        //From laptop where ram = 32;
+
+        Query query = session.createQuery("From Laptop");
+        List<Laptop> laptops = query.getResultList();
+
+        //Laptop l1 = session.find(Laptop.class,3);
+        System.out.println(laptops);
 
         session.close();
         sf.close();

@@ -31,6 +31,8 @@ public class Main {
         session.persist(a);
         transaction.commit();
 
+        Alien a2 = session.find(Alien.class,101);
+        System.out.println(a2);
         session.close();
         sf.close();
     }

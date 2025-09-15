@@ -10,9 +10,13 @@ import jakarta.persistence.Table;
 public class Alien {
 
     @Id
+    @Column(name = "alien_Id")
     private int aid;
-    @Column(name = "alien_name")
+    @Column(name = "alien_Name")
     private String aname;
+
+
+    @Column(name = "alien_Tech")
     private String tech;
 
     public int getAid() {

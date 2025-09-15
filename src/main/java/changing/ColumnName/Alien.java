@@ -1,9 +1,6 @@
 package changing.ColumnName;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "alien_table")
@@ -16,7 +13,7 @@ public class Alien {
     private String aname;
 
 
-    @Column(name = "alien_Tech")
+    @Transient
     private String tech;
 
     public int getAid() {

@@ -15,10 +15,6 @@ public class Alien {
     @OneToMany(fetch = FetchType.EAGER)
     private List<changing.ColumnName.Laptop> laptop;
 
-
-//    @Transient // when you do not want to perform database rather some business logic on the field you can mark it as transient
-//    private String tech;
-
     public int getAid() {
         return aid;
     }

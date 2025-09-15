@@ -12,16 +12,6 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-//    @OneToMany
-//    private List<Alien> alien;
-
-//    public List<Alien> getAlien() {
-//        return alien;
-//    }
-//
-//    public void setAlien(List<Alien> alien) {
-//        this.alien = alien;
-//    }
 
     public int getLid() {
         return lid;

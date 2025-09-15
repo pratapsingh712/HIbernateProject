@@ -9,9 +9,9 @@ public class Main {
     public static void main(String[] args) {
 
         Student s = new Student();
-        s.setRoll_No(6);
-        s.setS_Name("Parvati");
-        s.setS_Age(18);
+//        s.setRoll_No(6);
+//        s.setS_Name("Parvati");
+//        s.setS_Age(18); commenting this part so that I can perform the delete operation
 
 //        Student s1 = new Student();
 
@@ -34,7 +34,11 @@ public class Main {
 
         //session.persist(s); // instead of this earlier session.save(object); was used but to match the JPA standard naming convention it was changed to persist
 
-        session.merge(s);
+//        session.merge(s);
+
+        s = session.find(Student.class,5);
+
+        session.remove(s);
         transaction.commit();
 
         session.close();

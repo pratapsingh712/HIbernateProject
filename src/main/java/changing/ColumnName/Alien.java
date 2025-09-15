@@ -13,7 +13,7 @@ public class Alien {
     private String aname;
 
 
-    @Transient
+    @Transient // when you do not want to perform database rather some business logic on the field you can mark it as transient
     private String tech;
 
     public int getAid() {

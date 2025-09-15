@@ -11,7 +11,7 @@ public class Alien {
     private int aid;
     private String aname;
     private String tech;
-    @OneToMany(mappedBy = "alien")
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Laptop> laptop;
 
 

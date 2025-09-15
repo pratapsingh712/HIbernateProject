@@ -1,9 +1,8 @@
 package changing.ColumnName;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Laptop {
@@ -13,16 +12,16 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToOne
-    private Alien alien;
+//    @OneToMany
+//    private List<Alien> alien;
 
-    public Alien getAlien() {
-        return alien;
-    }
-
-    public void setAlien(Alien alien) {
-        this.alien = alien;
-    }
+//    public List<Alien> getAlien() {
+//        return alien;
+//    }
+//
+//    public void setAlien(List<Alien> alien) {
+//        this.alien = alien;
+//    }
 
     public int getLid() {
         return lid;

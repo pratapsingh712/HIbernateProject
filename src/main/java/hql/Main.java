@@ -28,9 +28,11 @@ public class Main {
         // select * from laptop where ram = 32; -> SQL
         //From laptop where ram = 32;
 
-        String brand = "Asus";
+        String brand = "Apple";
 
-        Query query = session.createQuery("From Laptop where brand like 'Asus'");
+//        Query query = session.createQuery("From Laptop where brand like 'Asus'"); this will get all the row with column brand as Asus
+        Query query = session.createQuery("From Laptop where brand like ?1");
+        query.setParameter(1,brand);
         List<Laptop> laptops = query.getResultList();
 
         //Laptop l1 = session.find(Laptop.class,3);

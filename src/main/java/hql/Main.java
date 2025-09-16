@@ -31,9 +31,9 @@ public class Main {
         String brand = "Apple";
 
 //        Query query = session.createQuery("From Laptop where brand like 'Asus'"); this will get all the row with column brand as Asus
-        Query query = session.createQuery("From Laptop where brand like ?1");
+        Query query = session.createQuery("select model From Laptop where brand like ?1");
         query.setParameter(1,brand);
-        List<Laptop> laptops = query.getResultList();
+        List<String> laptops = query.getResultList();
 
         //Laptop l1 = session.find(Laptop.class,3);
         System.out.println(laptops);

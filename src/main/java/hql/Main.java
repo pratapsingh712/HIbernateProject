@@ -28,7 +28,9 @@ public class Main {
         // select * from laptop where ram = 32; -> SQL
         //From laptop where ram = 32;
 
-        Query query = session.createQuery("From Laptop");
+        String brand = "Asus";
+
+        Query query = session.createQuery("From Laptop where brand like 'Asus'");
         List<Laptop> laptops = query.getResultList();
 
         //Laptop l1 = session.find(Laptop.class,3);

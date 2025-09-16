@@ -17,10 +17,16 @@ public class Main {
 
         Laptop l1 = session.find(Laptop.class,2);
         System.out.println(l1);
-        Laptop l2 = session.find(Laptop.class,2);
-        System.out.println(l2);
+//        Laptop l2 = session.find(Laptop.class,2);
+//        System.out.println(l2);
 
         session.close();
+
+        Session session1 = sessionFactory.openSession();
+        Laptop l2 = session1.find(Laptop.class,2);
+        System.out.println(l2);
+
+        session1.close();
         sessionFactory.close();
     }
 }
